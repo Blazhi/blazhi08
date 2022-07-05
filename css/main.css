@@ -420,6 +420,9 @@ a {
   padding: 10px 32px;
   cursor: pointer;
 }
+.hero__btn:hover, .hero__btn:focus {
+  cursor: alias;
+}
 
 .advantages-list {
   display: flex;
