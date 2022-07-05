@@ -298,6 +298,7 @@ a {
 .header {
   background-color: var(--background-color);
   border-bottom: 1px solid #ececec;
+  position: relative;
 }
 
 .logo {
@@ -379,6 +380,41 @@ a {
   color: var(--color-accent);
 }
 
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.menu-container {
+  background-color: palegoldenrod;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+.menu-container.is-open {
+  display: block;
+}
+
 .hero {
   max-width: 1600px;
   margin-left: auto;
@@ -421,7 +457,7 @@ a {
   cursor: pointer;
 }
 .hero__btn:hover, .hero__btn:focus {
-  cursor: alias;
+  background-color: darkblue;
 }
 
 .advantages-list {
