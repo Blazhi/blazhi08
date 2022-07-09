@@ -16,12 +16,16 @@
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em; 
-    color: var(--header-color);
+    color: var(--header-color); 
+}
+
+.header__logo{
+    margin-right: 93px;
 }
 
 .header__nav-list{
     display: flex;
-    margin-left: 93px;
+    
         &> :not(:last-child) {
             margin-right: 50px;
         }
@@ -93,35 +97,4 @@
         &:focus {
             color: var(--color-accent);
         }
-}
-.menu-button{
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color:transparent;
-    
-}
-.menu-button .icon-cross{
-    display: none;
-}
-.menu-button.is-open .icon-cross{
-    display: block;
-}
-.menu-button.is-open .icon-menu{
-    display: none;
-}
-.menu-container{
-    background-color:palegoldenrod;
-    padding: 20px;
-    text-align: center;
-    font-size: 20px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    display: none;
-    &.is-open{
-        display: block;
-    }
 }

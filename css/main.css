@@ -31,6 +31,8 @@ ul, ol {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -56,10 +58,25 @@ a {
 }
 
 .container {
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .backdrop {
@@ -82,13 +99,23 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 528px;
+  width: 95vw;
   min-height: 581px;
   background: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: var(--hover-focus-duration) cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 480px) {
+  .modal-window {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal-window {
+    width: 500px;
+  }
 }
 
 .backdrop.is-hidden .modal-window {
@@ -310,9 +337,12 @@ a {
   color: var(--header-color);
 }
 
+.header__logo {
+  margin-right: 93px;
+}
+
 .header__nav-list {
   display: flex;
-  margin-left: 93px;
 }
 .header__nav-list > :not(:last-child) {
   margin-right: 50px;
@@ -380,41 +410,6 @@ a {
   color: var(--color-accent);
 }
 
-.menu-button {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-}
-
-.menu-button .icon-cross {
-  display: none;
-}
-
-.menu-button.is-open .icon-cross {
-  display: block;
-}
-
-.menu-button.is-open .icon-menu {
-  display: none;
-}
-
-.menu-container {
-  background-color: palegoldenrod;
-  padding: 20px;
-  text-align: center;
-  font-size: 20px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  display: none;
-}
-.menu-container.is-open {
-  display: block;
-}
-
 .hero {
   max-width: 1600px;
   margin-left: auto;
@@ -424,9 +419,18 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
   text-align: center;
+}
+
+.hero__container {
+  padding-top: 118px;
+  padding-bottom: 118px;
+}
+@media screen and (min-width: 1200px) {
+  .hero__container {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
 }
 
 .hero__tittle {
@@ -461,16 +465,34 @@ a {
 }
 
 .advantages-list {
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
 }
-
-.advantages-list__item + .advantages-list__item {
-  margin-left: var(--typical-gap);
+@media screen and (min-width: 768px) {
+  .advantages-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    margin-left: -30px;
+  }
 }
 
 .advantages-list__item {
-  min-width: 270px;
+  /*min-width: 270px;*/
+  margin-bottom: var(--typical-gap);
+}
+@media screen and (min-width: 768px) {
+  .advantages-list__item {
+    flex-basis: calc(50% - 30px);
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .advantages-list__item {
+    flex-basis: calc(25% - 30px);
+  }
 }
 
 .advantages-list__cont {
@@ -504,6 +526,11 @@ a {
 
 .job {
   padding-top: 0px;
+}
+@media screen and (max-width: 1200px) {
+  .job {
+    display: none;
+  }
 }
 
 .job__tittle {
@@ -554,23 +581,36 @@ a {
   margin-bottom: 50px;
 }
 
-.team__list {
-  display: flex;
-  justify-content: center;
-  margin-left: -30px;
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+    justify-content: center;
+    margin-left: -30px;
+  }
 }
 
 /*.team-item + .team-item{
     margin-left: var(--typical-gap);
 }*/
 .team__item {
-  width: 270px;
-  height: 428px;
   text-align: center;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   background-color: #FFFFFF;
   margin-left: 30px;
+}
+@media screen and (min-width: 768px) {
+  .team__item {
+    flex-basis: calc(50% - 30px);
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team__item {
+    flex-basis: calc(25% - 30px);
+    width: 270px;
+    height: 428px;
+  }
 }
 
 .team__name {
@@ -634,15 +674,40 @@ a {
 
 .clients__list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  margin-left: -30px;
 }
 
 .clients__item {
   width: 170px;
   height: 92px;
+  margin-bottom: var(--typical-gap);
 }
 .clients__item + .clients__item {
   margin-left: var(--typical-gap);
+}
+@media screen and (max-width: 479px) {
+  .clients__item {
+    flex-basis: calc(50% - 30px);
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .clients__item {
+    flex-basis: calc(50% - 30px);
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .clients__item {
+    flex-basis: calc(33.3333333333% - 30px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .clients__item {
+    flex-basis: calc(16.6666666667% - 30px);
+  }
 }
 
 .clients__link {
@@ -666,6 +731,19 @@ a {
   justify-content: center;
   margin-bottom: 50px;
 }
+@media screen and (min-width: 480px) {
+  .examples__list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 768px) {
+  .examples__list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
 
 .examples__item:not(:last-child) {
   margin-right: 8px;
@@ -688,6 +766,11 @@ a {
   background-color: var(--color-accent);
   color: var(--first-btn-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+@media screen and (min-width: 480px) {
+  .examples__btn {
+    margin-bottom: 15px;
+  }
 }
 
 .projects__list {
@@ -891,4 +974,57 @@ a {
   vertical-align: middle;
   margin-left: 10px;
   fill: currentColor;
+}
+
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.menu-container {
+  background-color: palegoldenrod;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+.menu-container.is-open {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .menu-container {
+    display: none;
+  }
+  .menu-container.is-open {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: flex;
+  }
 }/*# sourceMappingURL=main.css.map */
